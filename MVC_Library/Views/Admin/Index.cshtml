@@ -1,0 +1,34 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblAdmin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Admin List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Details</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.adminId</td>
+            <td>@item.adminUsername</td>
+            <td>@item.adminPassword</td>
+            <td>@item.Authority</td>
+            <td>
+                <a href="/Admin/Edit/@item.adminId" class="btn btn-warning">Update</a>
+                <a href="/Admin/Delete/@item.adminId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/Add/" class="btn btn-success">Add New Admnin</a>

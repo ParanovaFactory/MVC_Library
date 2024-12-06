@@ -1,0 +1,45 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblBook>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Book List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Author</th>
+        <th>Relase</th>
+        <th>Publisher</th>
+        <th>Pages</th>
+        <th>Status</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach (var std in Model)
+        {
+            <tr>
+                <td>@std.bookId</td>
+                <td>@std.bookName</td>
+                <td>@std.TblCategory.categoryName</td>
+                <td>@std.TblAuthor.authorName @std.TblAuthor.authorSurname</td>
+                <td>@std.bookRelase</td>
+                <td>@std.bookPublisher</td>
+                <td>@std.bookPages</td>
+                <td>@std.bookStatus</td>
+                <td>
+                    <a href="/Book/Delete/@std.bookId" class="btn btn-danger">Delete</a>
+                    <a href="/Book/Edit/@std.bookId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Book/Add" class="btn btn-info">Add New Book</a>

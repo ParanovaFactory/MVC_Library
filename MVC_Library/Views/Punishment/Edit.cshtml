@@ -1,0 +1,34 @@
+﻿@model MVC_Library.Models.Entity.TblPunishment
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Punishment", FormMethod.Post))
+{
+    <div>
+        <label>Member</label>
+        @Html.DropDownListFor(m => m.TblMember.memberId, (List<SelectListItem>)ViewBag.mbr, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Operation</label>
+        @Html.DropDownListFor(m => m.TblOperation.operationId, (List<SelectListItem>)ViewBag.opt, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Start Date</label>
+        @Html.TextBoxFor(m => m.punishmentStartDate, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>End Date</label>
+        @Html.TextBoxFor(m => m.punishmentEndDate, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Fine</label>
+        @Html.TextBoxFor(m => m.punishmentFine, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.punishmentId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

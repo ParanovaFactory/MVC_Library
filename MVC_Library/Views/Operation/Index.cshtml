@@ -1,0 +1,40 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblOperation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Operation List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Book</th>
+        <th>Member</th>
+        <th>Employee</th>
+        <th>Get Date</th>
+        <th>Back Date</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach (var std in Model)
+        {
+            <tr>
+                <td>@std.operationId</td>
+                <td>@std.TblBook.bookName</td>
+                <td>@std.TblMember.memberName @std.TblMember.memberSurname</td>
+                <td>@std.TblEmployee.employeeNameSurname</td>
+                <td>@std.operationGetDate</td>
+                <td>@std.operationBackDate</td>
+                <td>
+                    <a href="/Operation/Delete/@std.operationId" class="btn btn-danger">Delete</a>
+                    <a href="/Operation/Edit/@std.operationId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

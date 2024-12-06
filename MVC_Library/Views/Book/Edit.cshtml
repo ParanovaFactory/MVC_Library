@@ -1,0 +1,42 @@
+﻿@model MVC_Library.Models.Entity.TblBook
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Book", FormMethod.Post))
+{
+    <div>
+        <label>Book Name</label>
+        @Html.TextBoxFor(m => m.bookName, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Category</label>
+        @Html.DropDownListFor(m => m.TblCategory.categoryId, (List<SelectListItem>)ViewBag.ctg, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Author</label>
+        @Html.DropDownListFor(m => m.TblAuthor.authorId, (List<SelectListItem>)ViewBag.ath, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Relase Date</label>
+        @Html.TextBoxFor(m => m.bookRelase, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Publisher</label>
+        @Html.TextBoxFor(m => m.bookPublisher, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Pages</label>
+        @Html.TextBoxFor(m => m.bookPages, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Status</label>
+        @Html.TextBoxFor(m => m.bookStatus, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.bookId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

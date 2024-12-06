@@ -1,0 +1,27 @@
+﻿@model MVC_Library.Models.Entity.TblAuthor
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Author", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Author Name</label>
+        @Html.TextBoxFor(m => m.authorName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.authorName)
+    </div>
+    <div class="form-group">
+        <label>Author Surname</label>
+        @Html.TextBoxFor(m => m.authorSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.authorSurname)
+    </div>
+    <div class="form-group">
+        <label>Details</label>
+        @Html.TextBoxFor(m => m.authorDetails, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.authorId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

@@ -1,0 +1,45 @@
+﻿@model MVC_Library.Models.Entity.TblMember
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Member", FormMethod.Post))
+{
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.memberName, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Surname</label>
+        @Html.TextBoxFor(m => m.memberSurname, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Mail</label>
+        @Html.TextBoxFor(m => m.memberMail, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Phone</label>
+        @Html.TextBoxFor(m => m.memberPhone, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Name Username</label>
+        @Html.TextBoxFor(m => m.memberUsername, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Password</label>
+        @Html.TextBoxFor(m => m.memberPassword, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Photo</label>
+        @Html.TextBoxFor(m => m.memberPhoto, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>School</label>
+        @Html.TextBoxFor(m => m.memberSchool, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.memberId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

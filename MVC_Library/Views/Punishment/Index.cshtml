@@ -1,0 +1,41 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblPunishment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Punishment List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Member</th>
+        <th>Operation</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Fine</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach (var std in Model)
+        {
+            <tr>
+                <td>@std.punishmentId</td>
+                <td>@std.TblMember.memberName @std.TblMember.memberSurname</td>
+                <td>@std.TblOperation.TblBook.bookName</td>
+                <td>@std.punishmentStartDate</td>
+                <td>@std.punishmentEndDate</td>
+                <td>@std.punishmentFine</td>
+                <td>
+                    <a href="/Punishment/Delete/@std.punishmentId" class="btn btn-danger">Delete</a>
+                    <a href="/Punishment/Edit/@std.punishmentId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Punishment/Add" class="btn btn-info">Add New Punishment</a>

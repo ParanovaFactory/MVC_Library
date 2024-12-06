@@ -1,0 +1,32 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblContact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Message List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Name</th>
+        <th>Mail</th>
+        <th>Number</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.contactId</td>
+            <td>@item.contactName</td>
+            <td>@item.contactMail</td>
+            <td>@item.contactNumber</td>
+            <td>
+                <a href="/Contact/Details/@item.contactId" class="btn btn-warning">Details</a>
+            </td>
+        </tr>
+    }
+</table>

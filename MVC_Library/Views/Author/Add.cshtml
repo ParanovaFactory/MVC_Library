@@ -1,0 +1,25 @@
+﻿@model MVC_Library.Models.Entity.TblAuthor
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Author Name</label>
+        <input type="text" class="form-control" name="authorName" />
+        @Html.ValidationMessageFor(y => y.authorName)
+    </div>
+    <div>
+        <label>Author Name</label>
+        <input type="text" class="form-control" name="authorSurname" />
+        @Html.ValidationMessageFor(y => y.authorSurname)
+    </div>
+    <div>
+        <label>Details</label>
+        <input type="text" class="form-control" name="authorDetails" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

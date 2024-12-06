@@ -1,0 +1,35 @@
+﻿@model MVC_Library.Models.Entity.TblPunishment
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form class="form-group" method="post">
+    <div>
+        <label>Member</label>
+        @Html.DropDownListFor(m => m.TblMember.memberId, (List<SelectListItem>)ViewBag.mbr, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Operation</label>
+        @Html.DropDownListFor(m => m.TblOperation.operationId, (List<SelectListItem>)ViewBag.opt, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Start Date</label>
+        <input type="text" class="form-control" name="punishmentStartDate" />
+    </div>
+    <div>
+        <label>End Date</label>
+        <input type="text" class="form-control" name="punishmentEndDate" />
+    </div>
+    <div>
+        <label>Fine</label>
+        <input type="text" class="form-control" name="punishmentFine" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>
+
+

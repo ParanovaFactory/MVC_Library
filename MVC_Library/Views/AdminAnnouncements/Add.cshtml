@@ -1,0 +1,19 @@
+﻿@model MVC_Library.Models.Entity.TblAnnouncement
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Category</label>
+        <input type="text" class="form-control" name="announcementCategory" />
+    </div>
+    <div>
+        <label>Context</label>
+        <input type="text" class="form-control" name="announcementContext" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

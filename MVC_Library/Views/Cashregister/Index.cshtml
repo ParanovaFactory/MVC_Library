@@ -1,0 +1,34 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblCashregister>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cashregister</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach (var std in Model)
+        {
+            <tr>
+                <td>@std.cashregisterId</td>
+                <td>@std.cashregisterMonth</td>
+                <td>@std.cashregisterAmount</td>
+                <td>
+                    <a href="/Cashregister/Delete/@std.cashregisterId" class="btn btn-danger">Delete</a>
+                    <a href="/Cashregister/Edit/@std.cashregisterId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Cashregister/Add" class="btn btn-info">Add New Invoice</a>

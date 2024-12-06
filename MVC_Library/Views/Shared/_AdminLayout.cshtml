@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<title>Library Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large"
+                onclick="w3_close()">
+            Close &times;
+        </button>
+        <a href="/Author/Index" class="w3-bar-item w3-button">Author</a>
+        <a href="/Cashregister/Index" class="w3-bar-item w3-button">Cash Register</a>
+        <a href="/Category/Index" class="w3-bar-item w3-button">Category</a>
+        <a href="/Employee/Index" class="w3-bar-item w3-button">Employee</a>
+        <a href="/Member/Index" class="w3-bar-item w3-button">Member</a>
+        <a href="/Operation/Index" class="w3-bar-item w3-button">Operation</a>
+        <a href="/Punishment/Index" class="w3-bar-item w3-button">Punishment</a>
+        <a href="/Book/Index" class="w3-bar-item w3-button">Book</a>
+        @if (User.IsInRole("A"))
+        {
+        <a href="/BookRent/Index" class="w3-bar-item w3-button">Book Rent</a>
+        <a href="/BookGet/Index" class="w3-bar-item w3-button">Book Get</a>
+        }
+        <a href="/Contact/Index" class="w3-bar-item w3-button">Contact</a>
+        <a href="/AdminAnnouncements/Index" class="w3-bar-item w3-button">Announcements</a>
+        <a href="/Statistic/Index" class="w3-bar-item w3-button">Statistics</a>
+        <a href="/Statistic/Gallery" class="w3-bar-item w3-button">Gallery</a>
+        <a href="/ShowCase/Index" class="w3-bar-item w3-button">Showcase</a>
+        <a href="/Statistic/Weather" class="w3-bar-item w3-button">Weather</a>
+        <a href="/Statistic/WeatherCard" class="w3-bar-item w3-button">Weather Card</a>
+        <a href="/Chart/Index" class="w3-bar-item w3-button">Chart</a>
+        <a href="/Admin/Index" class="w3-bar-item w3-button">Admin</a>
+        <a href="/AdminLogin/LogOut" class="w3-bar-item w3-button">Log Out</a>
+    </div>
+
+<div id="main">
+
+<div class="w3-teal">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Library Management</h1>
+  </div>
+</div>
+
+<div class="w3-container">
+    @RenderBody()
+</div>
+
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+
+</body>
+</html>

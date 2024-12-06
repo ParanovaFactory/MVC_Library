@@ -1,0 +1,26 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblMessage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<h3>Received Message List</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Sender</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Operation</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.messageSender</td>
+            <td>@item.messageSubject</td>
+            <td>@item.messageContaext</td>
+        </tr>
+    }
+</table>
+<a href="/Messages/New/" class="btn btn-info">New Message</a>

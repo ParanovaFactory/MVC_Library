@@ -1,0 +1,21 @@
+﻿@model MVC_Library.Models.Entity.TblAnnouncement
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "AdminAnnouncements", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Category</label>
+        @Html.TextBoxFor(m => m.announcementCategory, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Context</label>
+        @Html.TextBoxFor(m => m.announcementContext, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.announcementId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

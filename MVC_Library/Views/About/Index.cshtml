@@ -1,0 +1,30 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblAbout>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>About US</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Titile</th>
+        <th>Context</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.abloutid</td>
+            <td>@item.abloutTitle</td>
+            <td>@item.aboutContent</td>
+            <td>
+                <a href="/About/Edit/@item.abloutid" class="btn btn-warning">Update</a>
+            </td>
+        </tr>
+    }
+</table>

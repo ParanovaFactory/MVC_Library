@@ -1,0 +1,36 @@
+﻿@model MVC_Library.Models.Entity.TblOperation
+
+@{
+    ViewBag.Title = "Rent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<form class="form-group" method="post">
+    <div>
+        <label>Book</label>
+        @Html.DropDownListFor(m => m.TblBook.bookId, (List<SelectListItem>)ViewBag.bok, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Member</label>
+        @Html.DropDownListFor(m => m.TblMember.memberId, (List<SelectListItem>)ViewBag.mbr, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Employee</label>
+        @Html.DropDownListFor(m => m.TblEmployee.employeeId, (List<SelectListItem>)ViewBag.emp, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Get Date</label>
+        <input type="text" class="form-control" name="operationGetDate" />
+    </div>
+    <div>
+        <label>Back Date</label>
+        <input type="text" class="form-control" name="operationBackDate" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>
+
+

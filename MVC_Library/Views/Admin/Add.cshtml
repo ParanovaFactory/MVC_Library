@@ -1,0 +1,23 @@
+﻿@model MVC_Library.Models.Entity.TblAdmin
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Username</label>
+        <input type="text" class="form-control" name="adminUsername" />
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="text" class="form-control" name="adminPassword" />
+    </div>
+    <div>
+        <label>Authority</label>
+        <input type="text" class="form-control" name="Authority" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

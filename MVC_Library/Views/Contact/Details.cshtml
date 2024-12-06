@@ -1,0 +1,11 @@
+﻿@model MVC_Library.Models.Entity.TblContact
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="form-group">
+    <label>Context</label>
+    @Html.TextBoxFor(m => m.contactContaxt, new { @class = "form-control" })
+</div>
+@Html.HiddenFor(m => m.contactId)

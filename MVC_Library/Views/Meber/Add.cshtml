@@ -1,0 +1,45 @@
+﻿@model MVC_Library.Models.Entity.TblMember
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Name</label>
+        <input type="text" class="form-control" name="memberName" />
+    </div>
+    <div>
+        <label>Surname</label>
+        <input type="text" class="form-control" name="memberSurname" />
+    </div>
+    <div>
+        <label>Mail</label>
+        <input type="text" class="form-control" name="memberMail" />
+    </div>
+    <div>
+        <label>Phone</label>
+        <input type="text" class="form-control" name="memberPhone" />
+    </div>
+    <div>
+        <label>Username</label>
+        <input type="text" class="form-control" name="memberUsername" />
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="text" class="form-control" name="memberPassword" />
+    </div>
+    <div>
+        <label>Photo</label>
+        <input type="text" class="form-control" name="memberPhoto" />
+    </div>
+    <div>
+        <label>School</label>
+        <input type="text" class="form-control" name="memberSchool" />
+    </div>
+
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

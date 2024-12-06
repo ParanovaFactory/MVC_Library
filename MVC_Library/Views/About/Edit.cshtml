@@ -1,0 +1,22 @@
+﻿@model MVC_Library.Models.Entity.TblAbout
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "About", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Author Surname</label>
+        @Html.TextBoxFor(m => m.abloutTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Details</label>
+        @Html.TextBoxFor(m => m.aboutContent, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.abloutid)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

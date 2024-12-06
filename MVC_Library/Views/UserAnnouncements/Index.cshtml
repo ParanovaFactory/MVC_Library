@@ -1,0 +1,22 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblAnnouncement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<h3>Announcement List</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Category</th>
+        <th>Context</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.announcementCategory</td>
+            <td>@item.announcementContext</td>
+        </tr>
+    }
+</table>

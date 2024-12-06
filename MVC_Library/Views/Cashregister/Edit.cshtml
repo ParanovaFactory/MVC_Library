@@ -1,0 +1,21 @@
+﻿@model MVC_Library.Models.Entity.TblCashregister
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Cashregister", FormMethod.Post))
+{
+    <div>
+        <label>Book Name</label>
+        @Html.TextBoxFor(m => m.cashregisterMonth, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Relase Date</label>
+        @Html.TextBoxFor(m => m.cashregisterAmount, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.cashregisterId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}

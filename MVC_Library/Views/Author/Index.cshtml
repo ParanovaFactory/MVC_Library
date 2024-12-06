@@ -1,0 +1,34 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblAuthor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Author List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Details</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.authorId</td>
+            <td>@item.authorName</td>
+            <td>@item.authorSurname</td>
+            <td>@item.authorDetails</td>
+            <td>
+                <a href="/Author/Edit/@item.authorId" class="btn btn-warning">Update</a>
+                <a href="/Author/Delete/@item.authorId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Author/Add/" class="btn btn-success">Add New Category</a>

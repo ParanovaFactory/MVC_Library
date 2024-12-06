@@ -1,0 +1,33 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblEmployee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Employee List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Name Surname</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach (var std in Model)
+        {
+            <tr>
+                <td>@std.employeeId</td>
+                <td>@std.employeeNameSurname</td>
+                <td>
+                    <a href="/Employee/Delete/@std.employeeId" class="btn btn-danger">Delete</a>
+                    <a href="/Employee/Edit/@std.employeeId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Employee/Add" class="btn btn-info">Add New Employee</a>
+

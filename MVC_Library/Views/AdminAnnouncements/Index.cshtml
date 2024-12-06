@@ -1,0 +1,31 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblAnnouncement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Announcement List</h2>
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>#</th>
+        <th>Category</th>
+        <th>Context</th>
+        <th>Operations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.announcementId</td>
+            <td>@item.announcementCategory</td>
+            <td>@item.announcementContext</td>
+            <td>
+                <a href="/AdminAnnouncements/Edit/@item.announcementId" class="btn btn-warning">Update</a>
+                <a href="/AdminAnnouncements/Delete/@item.announcementId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/AdminAnnouncements/Add/" class="btn btn-success">Add New Announcement</a>

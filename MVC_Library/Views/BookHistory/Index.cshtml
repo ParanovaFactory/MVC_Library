@@ -1,0 +1,25 @@
+﻿@using MVC_Library.Models.Entity
+@model List<TblOperation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<h3>My Book List</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Book</th>
+        <th>Employee</th>
+        <th>Get Date</th>
+        <th>Return Date</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TblBook.bookName</td>
+            <td>@item.TblEmployee.employeeNameSurname</td>
+            <td>@item.operationGetDate</td>
+            <td>@item.operationBackDate</td>
+        </tr>
+    }
+</table>
