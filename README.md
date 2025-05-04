@@ -20,6 +20,8 @@ This project is a **Library Management System** developed using **ASP.NET MVC** 
 - **Statistics:** Display statistics for book availability and borrowings.
 - **Ready-to-use Template:** The frontend uses a pre-made template for a seamless user interface.
 
+---
+
 ## 👤 Author
 
 **Sadık Berkay Karaduman**  
